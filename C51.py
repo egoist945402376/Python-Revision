@@ -12,4 +12,3 @@ print(math.ceil(3.14))
 s3 = r'Hello, "Bart"'
 print(s3)
 #DIDIDIDI
-#DIDIDIDIDIDI
