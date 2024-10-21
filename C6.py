@@ -40,9 +40,13 @@ def cals(*numbers):
 
 # Variable keyword arguments
 numbers = [1,2,3,4,5,6]
+numbers2 = [2,3,4,5]
+print(cals(1,2,3))
+
+# use * before list or tuple to pass all elements of the list or tuple to the function
+# as variable arguments
 print(cals(*numbers))
-# *numbers represents passing all numbers of the list to the function
-# numbers is a tuple
+print(cals(*numbers2))
 
 # keyword arguments
 def person(name, age, **kw):
@@ -53,8 +57,19 @@ person('Jack', '27', city='Tianjin', job='Engineer')
 person('Jack', 24, city='Beijing', addr='Chaoyang', zipcode=123456)
 
 # use * to differentiate between positional arguments and keyword arguments
+# * means that city and job parameters must be passed as keyword arguments
 def person(name, age, *, city, job):
     print(name, age, city, job)
+
+try:
+    # Wrong call
+    person("Alice", 30, "New York", "Engineer")
+except TypeError as e:
+    print(f"Caught an exception: {e}")
+
+# Right way to call person:
+person("Alice", 30, city="New York", job="Engineer")
+
 
 
 def mul(x, y):
@@ -67,3 +82,4 @@ def mul(*numbers):
     for number in numbers:
         s = s * number
     return s
+
