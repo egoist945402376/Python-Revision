@@ -120,3 +120,13 @@ def dyn_stairs(n):
         a, b = b, a + b
     return b
 
+# lambda
+# lambda is a way to define a function without a name
+# lambda is suitable for simple function
+
+# multify returns a lambda function
+def multify(factor):
+    return lambda x: x * factor
+
+# double = lambda x: x * 2, which is a function.
+double = multify(2)
