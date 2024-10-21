@@ -83,3 +83,40 @@ def mul(*numbers):
         s = s * number
     return s
 
+# Recursion
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+# Hanoi Tower
+def Hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f"Move disk 1 from {source} to {target}")
+    else:
+        Hanoi(n-1, source, auxiliary, target)
+        print(f"Move disk {n} from {source} to {target}")
+        Hanoi(n-1, auxiliary, target, source)
+Hanoi(3, 'A', 'C', 'B')
+
+# Climb stairs
+def stairs(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    else:
+        return stairs(n-1) + stairs(n-2)
+
+# Dynamic programming
+def dyn_stairs(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    a = 1
+    b = 2
+    for i in range(3, n+1):
+        a, b = b, a + b
+    return b
+
