@@ -1,3 +1,4 @@
+__author__ = 'Muelsyse'
 import sys
 
 def greet():
