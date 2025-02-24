@@ -130,3 +130,5 @@ def multify(factor):
 
 # double = lambda x: x * 2, which is a function.
 double = multify(2)
+
+print("Hello")
